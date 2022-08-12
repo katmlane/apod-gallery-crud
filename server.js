@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const MongoClient = require("mongodb").MongoClient;
-const PORT = 3000;
+const PORT = process.env.PORT || 4000;
 const fetch = require("node-fetch");
 require("dotenv").config();
 const apodURL = "https://api.nasa.gov/planetary/apod?api_key=";
@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // process.env.PORT is so heroku can choose a port for our app
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 4000, () => {
   console.log(`Server running on port 3000`);
 });
 
