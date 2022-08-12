@@ -1,0 +1,26 @@
+<% for(let i = 0; i < pictures.length; i++){%>
+    <section>
+      <img src="<%= pictures[i].hdurl %>" id="">
+      <i class="fa-solid fa-heart"></i>
+    </section>
+<% } %>
+
+
+<% if (pictures[i].favorite == true) { %>
+    <section>
+        <img src="<%= pictures[i].hdurl %>" alt="">
+        <i class="fa-solid fa-thumbs-down"></i>
+    </section>
+    
+  <% } %>
+
+
+<% 'Scriptlet' tag, for control-flow, no output
+<%_ ‘Whitespace Slurping’ Scriptlet tag, strips all whitespace before it
+<%= Outputs the value into the template (HTML escaped)
+<%- Outputs the unescaped value into the template
+<%# Comment tag, no execution, no output
+<%% Outputs a literal '<%'
+%> Plain ending tag
+-%> Trim-mode ('newline slurp') tag, trims following newline
+_%> ‘Whitespace Slurping’ ending tag, removes all whitespace after it

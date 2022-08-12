@@ -1,0 +1,16 @@
+heroku login -i
+
+heroku create ...
+
+echo "web: node server.js" > Procfile
+
+in terminal add var to heroku
+heroku config:set DB_STRING='...'
+
+git add . 
+git commit -m "changes"
+git push heroku main
+
+// if you are using a branch instead of the main branch the push takes the form
+// where ... is the name of the branch you are on
+git push heroku ...:main

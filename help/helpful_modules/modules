@@ -1,0 +1,6 @@
+// to install the module
+
+npm install node-fetch@2.0
+
+// to use the module
+const fetch = require('node-fetch');

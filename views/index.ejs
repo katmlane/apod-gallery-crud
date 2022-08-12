@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book App</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/a268f43d2d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Let's find some astronomical pictures!</h1>
+    <form action="/getObject" method="post">
+        <input type="date" name="date" id=""> Date
+    <button type="submit">Submit</button>
+    </form>
+
+    <div>
+        <img class="date" src="">
+        <h2 class="title"></h2>
+    </div>
+
+    <!-- normal for loop -->
+    <% for(let i = 0; i < pictures.length; i++){%>
+              <section>
+                <img src="<%= pictures[i].hdurl %>" id="">
+                <h2><%=pictures[i].title %></h2>
+                <p><%=pictures[i].explanation %></p>
+                <i class="fa-solid fa-heart"></i>
+              </section>
+        <% } %>
+
+        <h2>Here are your favorites</h2>
+
+        <!-- for loop with a nested if -->
+        <% for(let i = 0; i < pictures.length; i++){%>
+            <% if (pictures[i].favorite == true) { %>
+                <section>
+                    <img src="<%= pictures[i].hdurl %>" alt="">
+                    <h2><%=pictures[i].title %></h2>
+                    <p><%=pictures[i].explanation %></p>
+                    <i class="fa-solid fa-thumbs-down"></i>
+                </section>
+                
+              <% } %>
+
+      <% } %>
+
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
